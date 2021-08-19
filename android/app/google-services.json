@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "501469457133",
+    "project_id": "flutter-course-by-codzify",
+    "storage_bucket": "flutter-course-by-codzify.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501469457133:android:67f82a068ef9c0af59fae4",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501469457133-dp358k4kopo5l3b9tge5cbee0jnm392e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_ecommerce_app",
+            "certificate_hash": "793d9e310284a4567b3f61dc0142f0bfddb793ce"
+          }
+        },
+        {
+          "client_id": "501469457133-gabmtop0aqa9ipiaq35bhqbfsqd3epju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1tpozizo4_8YvVeUFuG0w0WamTFmjvd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501469457133-gabmtop0aqa9ipiaq35bhqbfsqd3epju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
