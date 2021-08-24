@@ -20,6 +20,20 @@ class AuthService {
 
   // sign in with email and password
 
+  Future<AppUser?> signInWithEmailAndPassword(
+      String userEmail, String userPassword) async {
+    try {
+      final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
+          email: userEmail, password: userPassword);
+      User? _firebaseUser = userCredential.user;
+      AppUser _appUser = _convertToAppUser(_firebaseUser!);
+      return _appUser;
+    } catch (e) {
+      print("Invalid credentials.");
+      return null;
+    }
+  }
+
   // register user with email and password
 
   Future<AppUser> createUserWithEmailAndPassword(
@@ -34,11 +48,13 @@ class AuthService {
   }
 
   // sign out
+  Future<void> signOut() async {
+    return await _firebaseAuth.signOut();
+  }
+}
 
 //   // sign in with google
 
 //   // sign in with facebook
 
 //   // sign in with mobile
-
-}

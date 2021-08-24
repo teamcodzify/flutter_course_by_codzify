@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ecommerce_app/common_widgets/utils.dart';
-import 'package:flutter_ecommerce_app/screens/signup_screen.dart';
+import 'package:flutter_ecommerce_app/screens/signin_screen.dart';
 
 class WalkthroughScreen extends StatefulWidget {
   const WalkthroughScreen({Key? key}) : super(key: key);
@@ -132,7 +132,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
             padding: const EdgeInsets.only(bottom: 30.0),
             child: ElevatedButton(
               onPressed: () {
-                return pushToAnotherPage(context, const SignUpScreen());
+                return pushToAnotherPage(context, SignInScreen());
               },
               child: const Text("Get started"),
             ),

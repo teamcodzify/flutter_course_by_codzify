@@ -3,6 +3,7 @@ class AppUser {
   final String? email;
   final String? photoURL;
   final String? displayName;
+
   const AppUser({
     required this.uid,
     required this.email,
