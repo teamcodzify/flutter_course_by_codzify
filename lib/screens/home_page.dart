@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/common_widgets/config.dart';
 import 'package:flutter_ecommerce_app/common_widgets/utils.dart';
 import 'package:flutter_ecommerce_app/screens/signin_screen.dart';
 import 'package:flutter_ecommerce_app/services/authentication_service.dart';
@@ -13,22 +14,41 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     AuthService _authService = AuthService();
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+      appBar: AppBar(
+        actions: [
           // 1
-          Center(
-            child: Text("Home Page"),
+          IconButton(
+            onPressed: () => currentTheme.toggleTheme(),
+            icon: const Icon(Icons.lightbulb_outline, size: 24.0),
           ),
 
           // 2
-          ElevatedButton(
+          const SizedBox(width: 8.0),
+
+          // 3
+          TextButton(
             onPressed: () {
               _authService.signOut();
               pushAndReplaceWithAnotherPage(context, SignInScreen());
             },
-            child: Text("Logout"),
+            child: const Text("Logout"),
           ),
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          // 1
+          const Center(
+            child: Text("Home Page"),
+          ),
+
+          //
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Click Me"),
+          )
         ],
       ),
     );
