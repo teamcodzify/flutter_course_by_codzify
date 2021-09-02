@@ -10,7 +10,9 @@ class DynamicDropDown extends StatefulWidget {
 
 class _DynamicDropDownState extends State<DynamicDropDown> {
   String dropDownValue1 = "Stock 1";
-  String dropDownValue2 = "value 1";
+  int dropDownValue2 = 1;
+  int length = 1;
+  Map<String, int> allData = {};
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,6 @@ class _DynamicDropDownState extends State<DynamicDropDown> {
                   return const Center(child: Text("Loading"));
                 } else {
                   List<DropdownMenuItem<String>> stocks = [];
-                  List<int> quantity = [];
 
                   for (int i = 0; i < snapshot.data!.docs.length; i++) {
                     Map<String, dynamic> data =
@@ -41,37 +42,51 @@ class _DynamicDropDownState extends State<DynamicDropDown> {
                       ),
                     );
 
-                    quantity.add(5);
-                    // quantity.add(int.parse(data["qty"]));
+                    allData[data["name"]] = data["qty"];
                   }
 
-                  return DropdownButton(
-                    value: dropDownValue1,
-                    items: stocks,
-                    onChanged: (_value) {
-                      setState(() {
-                        dropDownValue1 = _value.toString();
-                      });
-                    },
+                  return Column(
+                    children: [
+                      // first drop down
+                      DropdownButton(
+                        value: dropDownValue1,
+                        items: stocks,
+                        onChanged: (_value) {
+                          setState(
+                            () {
+                              length = allData[_value]!;
+                              dropDownValue1 = _value.toString();
+                            },
+                          );
+                        },
+                      ),
+
+                      // second drop down
+                      DropdownButton(
+                        value: dropDownValue2,
+                        items: List.generate(
+                          length,
+                          (index) {
+                            return DropdownMenuItem(
+                              value: index + 1,
+                              child: Text(
+                                "${index + 1}",
+                              ),
+                            );
+                          },
+                        ),
+                        onChanged: (_value) {
+                          setState(() {
+                            dropDownValue2 = int.parse(
+                              _value.toString(),
+                            );
+                          });
+                        },
+                      ),
+                    ],
                   );
                 }
               }),
-
-          // second drop down
-          DropdownButton(
-            value: dropDownValue2,
-            // ignore: prefer_const_literals_to_create_immutables
-            items: [
-              const DropdownMenuItem(value: "value 1", child: Text("value 1")),
-              const DropdownMenuItem(value: "value 2", child: Text("value 2")),
-              const DropdownMenuItem(value: "value 3", child: Text("value 3"))
-            ],
-            onChanged: (value) {
-              setState(() {
-                dropDownValue2 = value.toString();
-              });
-            },
-          ),
         ],
       )),
     );
