@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce_app/common_widgets/config.dart';
 import 'package:flutter_ecommerce_app/common_widgets/utils.dart';
 import 'package:flutter_ecommerce_app/screens/signin_screen.dart';
 import 'package:flutter_ecommerce_app/services/authentication_service.dart';
+import 'package:flutter_ecommerce_app/services/user_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,6 +11,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late bool themeValue;
+  @override
+  void initState() {
+    super.initState();
+    themeValue = UserPreferences().getUserTheme()!;
+    print("*********");
+    print(themeValue);
+  }
+
   @override
   Widget build(BuildContext context) {
     AuthService _authService = AuthService();

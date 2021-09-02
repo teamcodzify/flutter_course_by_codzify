@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/services/user_preferences.dart';
 
 class CustomColors {
   static const Color lightPurple = Color(0xFFBB86FA);
@@ -10,11 +11,13 @@ class CustomColors {
 }
 
 class AppTheme extends ChangeNotifier {
-  static bool _isDarkTheme = true;
+  static bool _isDarkTheme = false;
   ThemeMode get currentTheme => _isDarkTheme ? ThemeMode.dark : ThemeMode.light;
 
   void toggleTheme() {
     _isDarkTheme = !_isDarkTheme;
+    // UserPreferences().setUserTheme(_isDarkTheme);
+
     notifyListeners();
   }
 

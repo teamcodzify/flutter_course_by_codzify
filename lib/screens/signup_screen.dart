@@ -12,7 +12,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String userEmail = "abcd@codzify.com";
+  String userEmail = "abcde@codzify.com";
   String userPassword = "codzify";
 
   final AuthService _authService = AuthService();
