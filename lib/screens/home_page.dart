@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           // 1
           IconButton(
-            onPressed: () => currentTheme.toggleTheme(),
+            onPressed: () => currentAppTheme.toggleTheme(),
             icon: const Icon(Icons.lightbulb_outline, size: 24.0),
           ),
 

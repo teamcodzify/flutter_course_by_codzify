@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/services/user_preferences.dart';
 
 class CustomColors {
   static const Color lightPurple = Color(0xFFBB86FA);
