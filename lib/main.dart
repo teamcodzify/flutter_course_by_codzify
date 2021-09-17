@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/animations/builtin_explicit_animation.dart';
 import 'package:flutter_ecommerce_app/animations/fade_in_text_animation_starter.dart';
+import 'package:flutter_ecommerce_app/animations/hero_animation.dart';
 import 'package:flutter_ecommerce_app/animations/shape_shifting_animation.dart';
 import 'package:flutter_ecommerce_app/animations/space_ship_animation.dart';
 import 'package:flutter_ecommerce_app/animations/tween_colorfilter_demo.dart';
@@ -55,7 +56,8 @@ class _MyAppState extends State<MyApp> {
       // home: TweenColorFilterDemo(),
       // home: FadeInDemo(),
       // home: BuiltinExplictAnimationDemo(),
-      home: SpaceShipAnimation(),
+      // home: SpaceShipAnimation(),
+      home: HeroAnimation(),
       // home: ChangeNotifierProvider<CounterService>(
       //   create: (context) => CounterService(),
       //   child: Counter(),
